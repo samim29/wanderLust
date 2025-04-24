@@ -1,0 +1,55 @@
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-white shadow-sm px-4 py-2">
+  <div class="container-fluid">
+    <!-- Left: Logo -->
+    <a class="navbar-brand " href="/listings">
+      <div class=" d-flex align-items-center gap-3">
+        <i class="fa-solid fa-compass"></i> 
+        <p class="mt-3">Wander Lust</p>
+      </div>
+    </a>
+
+    <!-- Center: Links -->
+    <div class="d-none d-lg-flex mx-auto">
+      <a class="nav-link fw-bold text-dark mx-3" href="/">Homes</a>
+    </div>
+
+<!-- Right: Icons & profile with dropdown -->
+<div class="d-flex align-items-center gap-3">
+ 
+
+  <!-- Dropdown -->
+
+<div class="d-flex align-items-center gap-3">
+ 
+
+  <!-- Custom dropdown toggle without caret -->
+  <div class="dropdown">
+    <button
+      class="btn border rounded-pill d-flex align-items-center px-3 py-1 gap-2"
+      type="button"
+      id="dropdownMenuButton"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      <i class="bi bi-list fs-5"></i>
+      <i class="bi bi-person-circle fs-4"></i>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+      <% if (!user) { %>
+        <li><a class="dropdown-item" href="/login">Login</a></li>
+        <li><a class="dropdown-item" href="/register">Sign Up</a></li>
+      <% } else { %>
+        <li>
+          <a class="dropdown-item" href="/dashboard">Dashboard</a>
+        </li>
+        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+        <li><a  class="dropdown-item" href="/my-bookings">My Bookings</a></li>
+      <% } %>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+  </div>
+</nav>

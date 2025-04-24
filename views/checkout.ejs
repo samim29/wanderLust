@@ -1,0 +1,34 @@
+<% layout("/layouts/boilerplate") %>
+<div class="container mt-4">
+    <h2>Checkout - <%= listing.title %></h2>
+
+    <form action="/checkout/<%= listing._id %>" method="POST" onsubmit="return validateForm()">
+        <div class="mb-3">
+            <label>Check-in Date:</label>
+            <input type="date" name="checkin" class="form-control" id="checkin" required>
+        </div>
+        <div class="mb-3">
+            <label>Check-out Date:</label>
+            <input type="date" name="checkout" class="form-control" id="checkout" required>
+        </div>
+        <div class="mb-3">
+            <label>Number of Guests:</label>
+            <input type="number" name="guests" class="form-control" min="1" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Calculate Total</button>
+    </form>
+</div>
+
+<script>
+    function validateForm() {
+        const checkin = document.getElementById('checkin').value;
+        const checkout = document.getElementById('checkout').value;
+
+        // Check if check-in is before check-out
+        if (new Date(checkin) >= new Date(checkout)) {
+            alert("Check-in date must be before the check-out date.");
+            return false;
+        }
+        return true;
+    }
+</script>

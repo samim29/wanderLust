@@ -1,0 +1,23 @@
+<% layout("/layouts/boilerplate") %>
+<div class="container mt-4">
+    <h2 class="h4 mb-3">Booking Summary for <%= listing.title %></h2>
+    <p class="lead"><strong>Check-in:</strong> <%= checkin %></p>
+    <p class="lead"><strong>Check-out:</strong> <%= checkout %></p>
+    <p class="lead"><strong>Guests:</strong> <%= guests %></p>
+    <p class="lead"><strong>Nights:</strong> <%= nights %></p>
+    <p class="lead"><strong>Total Price:</strong> ₹<%= totalPrice.toLocaleString("en-IN") %></p>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form action="/confirm" method="POST" class="form-group">
+                <input type="hidden" name="listingId" value="<%= listing._id %>">
+                <input type="hidden" name="checkin" value="<%= checkin %>">
+                <input type="hidden" name="checkout" value="<%= checkout %>">
+                <input type="hidden" name="guests" value="<%= guests %>">
+                <input type="hidden" name="nights" value="<%= nights %>">
+                <input type="hidden" name="totalPrice" value="<%= totalPrice %>">
+                <button class="btn btn-primary w-100">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+</div>

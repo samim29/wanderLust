@@ -1,0 +1,51 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-10 mt-4">
+        <h1 class="text-center mb-4">Register</h1>
+
+        <form action="/register" method="POST">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              id="username" 
+              name="username" 
+              required
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input 
+              type="email" 
+              class="form-control" 
+              id="email" 
+              name="email" 
+              placeholder="email@example.com" 
+              required
+            >
+          </div>
+
+          <div class="mb-3">
+            <label for="inputPassword" class="form-label">Password</label>
+            <input 
+              type="password" 
+              class="form-control" 
+              id="inputPassword" 
+              name="password" 
+              required
+            >
+          </div>
+
+          <div class="d-grid gap-2">
+            <button class="btn btn-dark py-2" type="submit">Sign Up</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</body>

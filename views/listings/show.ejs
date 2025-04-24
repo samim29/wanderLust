@@ -1,0 +1,40 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-3">
+            <h3>Listing Details :</h3>
+        </div>
+        <div class="card col-6 offset-3 show-card">
+            <img src="<%= listing.image %>" class="card-img-top show-img" alt="listing_image">
+            <div class="card-body">
+                <p class="card-text">
+                    <b><%= listing.title %></b><br>
+                    <%= listing.description %><br>
+                    &#8377; <%= listing.price.toLocaleString("en-IN") %><br>
+                    <%= listing.location %><br>
+                    <%= listing.country %>
+                </p>
+
+                <!-- Reserve Button -->
+                <form action="/checkout/<%= listing._id %>" method="GET">
+                    <button class="btn btn-primary">Reserve</button>
+                </form>
+                
+            </div>
+        </div>
+
+        <!-- <div class="btns offset-3 d-flex align-items-center gap-3">
+            <% if (user && listing.owner && user._id.toString() === listing.owner.toString()) { %>
+                <a href="/listings/<%= listing._id %>/edit" class="btn btn-warning">Edit</a>
+                <form action="/listings/<%= listing._id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            <% } %>
+        </div> -->
+    </div>
+</body>
+
+
+
+    
+</body>
