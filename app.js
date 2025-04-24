@@ -42,10 +42,15 @@ app.use(async (req, res, next) => {
 });
 
 // Connect to MongoDB
-main().then(() => console.log("connected to DB")).catch(console.log);
+main().then(() => console.log("✅ Connected to DB")).catch(console.error);
+
 async function main() {
-    await mongoose.connect(MONGO_URL);
+    await mongoose.connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true
+    });
 }
+
 
 // Middleware to protect routes
 function requireLogin(req, res, next) {
