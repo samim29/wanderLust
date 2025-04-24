@@ -11,7 +11,7 @@ const session = require('express-session');
 const Reservation = require("./models/reservation.js");
 require('dotenv').config();
 
-const MONGO_URL = process.env.MONGO_URL || "mongodb://127.0.0.1:27017/wanderlust";
+const MONGO_URL = process.env.MONGO_URL;
 
 // View engine setup
 app.set("view engine", "ejs");
